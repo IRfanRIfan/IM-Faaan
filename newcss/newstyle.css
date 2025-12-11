@@ -1,0 +1,185 @@
+/* ... style lainnya ... */
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antar link */
+    margin-top: 20px;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8); /* Warna putih transparan agar elegan */
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border tipis */
+    border-radius: 30px;
+  }
+
+  .social-links a:hover {
+    color: #000; /* Warna teks saat dihover */
+    background: #fff; /* Latar putih saat dihover */
+    transform: translateX(5px);
+    border-color: #fff;
+  }
+
+  .social-links span.icon {
+    font-size: 20px;
+  }
+
+
+
+/* =========================================
+   1. CSS UTAMA (TAMPILAN DESKTOP/LAPTOP)
+   ========================================= */
+
+/* --- LAYOUT SOCIAL LINKS DI DESKTOP --- */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: 0.3s;
+  padding: 12px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  background: rgba(0,0,0,0.2);
+}
+
+.social-links a:hover {
+  background: #fff;
+  color: #000;
+  transform: translateX(5px);
+}
+
+/* --- TEKS "IM Faaan" (DESKTOP) --- */
+/* Ini settingan agar teks hanya ada di bagian foto */
+h1.vr {
+  position: absolute;
+  top: 50%;
+  left: 0; 
+  /* KUNCI: Batasi lebar hanya 50% (setengah layar kiri/foto) */
+  width: 50%; 
+  transform: translateY(-50%);
+  
+  /* KUNCI: Ukuran font dikecilkan agar muat di area foto */
+  font-family: "Barlow Condensed", Arial, sans-serif;
+  font-size: 12vw; /* Sesuaikan angka ini jika kurang kecil/besar */
+  
+  text-align: center;
+  z-index: 99;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+  pointer-events: none; /* Agar tidak menghalangi klik pada elemen lain */
+}
+
+
+/* =========================================
+   2. CSS KHUSUS HP (MEDIA QUERY)
+   ========================================= */
+@media (max-width: 768px) {
+  
+  /* --- LAYOUT: TETAP 50:50 (KIRI-KANAN) --- */
+  .home-wrap {
+    flex-direction: row !important;
+    height: 100vh !important;
+  }
+
+  .half {
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    height: 100% !important;
+  }
+
+  /* --- WADAH LINK (KOTAK HITAM) --- */
+  .social-links-wrapper {
+    padding: 5px 10px !important;
+    width: 100%;
+    margin-top: -80px; 
+  }
+
+  .social-links-wrapper h2 {
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  /* --- TOMBOL VERSI MINI --- */
+  .social-links {
+    gap: 6px !important; 
+  }
+
+  .social-links a {
+    font-size: 9px !important;
+    padding: 5px 8px !important;
+    gap: 5px !important;
+    border-radius: 10px !important;
+    height: auto !important;
+    white-space: nowrap;
+  }
+
+  .social-links img, 
+  .social-links span[class^="icon-"] {
+    width: 14px !important;
+    height: 14px !important;
+    font-size: 12px !important;
+  }
+
+  /* --- TEKS "IM Faaan" KHUSUS HP --- */
+  /* Di HP kita kembalikan lebarnya jadi 100% dan taruh di bawah */
+  h1.vr {
+    width: 100% !important;      /* Lebar penuh layar HP */
+    top: auto !important;        /* Hapus posisi tengah vertikal */
+    bottom: 150px !important;     /* Posisi dari bawah (naikkan angka ini jika kurang naik) */
+    transform: none !important;
+    
+    font-size: 18vw !important;  /* Ukuran font besar di HP */
+    -webkit-text-stroke-width: 1px !important; /* Garis lebih tipis di HP */
+    opacity: 0.8;
+    z-index: 9999 !important;
+  }
+}
+
+
+
+
+.hr-elegant {
+  display: flex;
+  align-items: center;
+  color: #555;
+  margin: 35px 0;
+}
+.hr-elegant::before,
+.hr-elegant::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #555);
+}
+.hr-elegant::after {
+  background: linear-gradient(to left, transparent, #555);
+}
+.hr-elegant span {
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
